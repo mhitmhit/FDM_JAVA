@@ -12,7 +12,7 @@ public class driver {
 		boolean test = userManager.authenticate("usernamme", "password");
 		
 		System.out.println(test);
-		
+		System.out.println();
 	}
 
 }
