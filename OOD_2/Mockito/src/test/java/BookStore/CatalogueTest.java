@@ -20,25 +20,24 @@ import static org.mockito.Mockito.anyInt;
 import static org.mockito.Mockito.anyDouble;
 
 @ExtendWith(MockitoExtension.class)
-
 class CatalogueTest {
 
+	@Mock
+	ReadItemCommand mockReadItemCommand;
+	
 	@Test
 	public void getAllBooks_ReturnsEmptyBookList_IfNoBooksAreInTheCatalogue() {
 		// Arrange
 		System.out.println("test 1:");
-		Catalogue catalogue = new Catalogue();
+		Catalogue catalogue = new Catalogue(mockReadItemCommand);
 		
 		// Act
 		ArrayList<Book> returnedList;
-		returnedList = catalogue.getAllBooks(mockReadItemCommand);
+		returnedList = catalogue.getAllBooks();
 	
 		// Assert
 		assertEquals(returnedList.size(), 0);
 	}
-	
-	@Mock
-	ReadItemCommand mockReadItemCommand;
 	
 	@Test
 	public void getallBooks_CallsReadAllMethodOfReadItemCommand_WhenCalled() {
@@ -47,16 +46,17 @@ class CatalogueTest {
 		Catalogue catalogue = new Catalogue(mockReadItemCommand);
 		
 		// Act
-		ArrayList<Book> returnedList = catalogue.getAllBooks(mockReadItemCommand);
+		ArrayList<Book> returnedList = catalogue.getAllBooks();
  
 		// Ass
 		verify(mockReadItemCommand).readAll();
 	}
 	
 	@Test
-	public void ReturnsListOfBooksItReceivesFromReadAllMethodOfReadItemCommand_WhenCalled() {
+	public void getAllBooks_ReturnsListOfBooksItReceivesFromReadAllMethodOfReadItemCommand_WhenCalled() {
 		System.out.println("test 3: ");
 		Catalogue catalogue = new Catalogue(mockReadItemCommand);
+		
 		ArrayList<Book> bookList = new ArrayList<Book>();
 		ArrayList<Book> bookList2 = new ArrayList<Book>();
 		
@@ -71,14 +71,13 @@ class CatalogueTest {
 		bookList2.add(book3);
 		bookList2.add(book3);
 		
-		catalogue.addBooks(bookList);
+		when(mockReadItemCommand.readAll()).thenReturn(bookList);
 		
-		//lenient().when(mockReadItemCommand.readAll()).thenReturn(bookList);
-		
-		assertEquals(catalogue.getAllBooks(mockReadItemCommand), bookList);
-		
-		
-		
+		assertEquals(catalogue.getAllBooks(), bookList);
 	}
 
+	@Test
+	public void addBook_PassGivenBookToInsertItemMethodFromWriteItemCommand() {
+		
+	}
 }

@@ -6,18 +6,18 @@ import java.util.List;
 public class Catalogue {
 
 	ArrayList<Book> books = new ArrayList<Book>();
-	ReadItemCommand readItemComman;
+	ReadItemCommand readItemCommand;
 	
 	public Catalogue(ReadItemCommand readItemCommand) {
-		this.readItemComman = readItemCommand;
+		this.readItemCommand = readItemCommand;
 	}
 	
 	public Catalogue() {
-		
 	}
 	
-	public ArrayList<Book> getAllBooks(ReadItemCommand readItemCommand) {
-		//books = readItemCommand.readAll();
+	public ArrayList<Book> getAllBooks() {
+		//readItemCommand.readAll();
+		this.books = readItemCommand.readAll();
 		return books;
 	}
 	
