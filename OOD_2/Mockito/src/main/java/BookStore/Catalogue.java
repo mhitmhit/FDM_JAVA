@@ -7,12 +7,17 @@ public class Catalogue {
 
 	ArrayList<Book> books = new ArrayList<Book>();
 	ReadItemCommand readItemCommand;
+	WriteItemCommand writeItemCommand;
 	
 	public Catalogue(ReadItemCommand readItemCommand) {
 		this.readItemCommand = readItemCommand;
 	}
 	
 	public Catalogue() {
+	}
+	
+	public Catalogue(WriteItemCommand writeItemCommand) {
+		this.writeItemCommand = writeItemCommand;
 	}
 	
 	public ArrayList<Book> getAllBooks() {
@@ -22,7 +27,7 @@ public class Catalogue {
 	}
 	
 	public void addBook(Book book) {
-		books.add(book);
+		writeItemCommand.insertItem(book);
 	}
 	
 	public void addBooks(ArrayList<Book> books) {

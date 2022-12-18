@@ -25,6 +25,12 @@ class CatalogueTest {
 	@Mock
 	ReadItemCommand mockReadItemCommand;
 	
+	@Mock
+	Book mockBook;
+	
+	@Mock
+	WriteItemCommand mockWriteItemCommand;
+	
 	@Test
 	public void getAllBooks_ReturnsEmptyBookList_IfNoBooksAreInTheCatalogue() {
 		// Arrange
@@ -46,7 +52,7 @@ class CatalogueTest {
 		Catalogue catalogue = new Catalogue(mockReadItemCommand);
 		
 		// Act
-		ArrayList<Book> returnedList = catalogue.getAllBooks();
+		catalogue.getAllBooks();
  
 		// Ass
 		verify(mockReadItemCommand).readAll();
@@ -78,6 +84,19 @@ class CatalogueTest {
 
 	@Test
 	public void addBook_PassGivenBookToInsertItemMethodFromWriteItemCommand() {
+		System.out.println("test 4: ");
+		
+		Catalogue catalogue = new Catalogue(mockWriteItemCommand);
+		
+		Book book1 = new Book("111111");
+		
+		catalogue.addBook(book1);
+		
+		verify(mockWriteItemCommand).insertItem(book1);
 		
 	}
+	
+	
+	
+	
 }
