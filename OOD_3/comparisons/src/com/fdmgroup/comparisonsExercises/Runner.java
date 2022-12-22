@@ -50,7 +50,31 @@ public class Runner {
 			System.out.println(b.getTitle());
 		}
 		
-		// Set<Book> bookSet = new TreeSet<Book>(ratAndPricecompare);
+		System.out.println("---------------");
+		Set<Book> bookSet = new TreeSet<Book>(ratAndPricecompare);
+		bookSet.add(book1);
+		bookSet.add(book2);
+		bookSet.add(book3);
+		bookSet.add(book4);
+		bookSet.add(book5);
+		bookSet.add(book6);
+		bookSet.add(book7);
+		
+		for (Book b:bookSet) {
+			System.out.println(b.getRating() +" "+b.getPrice());
+		}
+		
+		System.out.println("---------------");
+		doubleBuiltInComparator doubleCompare = new doubleBuiltInComparator();
+		
+		doubleCompare.addToQueue(6.0);
+		doubleCompare.addToQueue(1.0);
+		doubleCompare.addToQueue(3.0);
+		doubleCompare.addToQueue(7.0);
+		
+		for (Double b: doubleCompare.getQueue()) {
+			System.out.println(b);
+		}
 		
 	}
 
