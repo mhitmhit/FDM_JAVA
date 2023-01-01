@@ -60,7 +60,8 @@ public class Demo {
 				(age1, age2) -> age1 - age2;
 				
 		//Optional<Integer> highestAge = people.stream().map(person -> person.getAge()).max(ageComparator);
-		Optional<Integer> highestAge = emptyPeopleList.stream().map(person -> person.getAge()).max(ageComparator);
+		Optional<Integer> highestAge = emptyPeopleList.stream()
+				.map(person -> person.getAge()).max(ageComparator);
 		
 		if (highestAge.isPresent()) {
 			System.out.println(highestAge);
