@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalDouble;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 public class Runner {
@@ -76,9 +77,21 @@ public class Runner {
 	    System.out.println("before increase:");
 	    System.out.println(acctList);
 	    System.out.println("after increase:");
-	    acctList.stream().map(acct -> acct.getAccountType().contains("savings") ? acct.setInterestRate(1.3) :acct.getInterestRate())
+	    acctList.stream().filter(acct -> acct.getAccountType().contains("savings")).forEach(acct -> acct.setInterestRate(1.3));
+	    System.out.println(acctList);
 	    
-	    System.out.println("------------------1.2.1");
+	    
+	    System.out.println("------------------1.3.4");
+	    List<BankAccount> accountsFrom987654 = acctList.stream().filter(acct -> acct.getBankCode()==987654).collect(Collectors.toList());
+	    System.out.println(accountsFrom987654);
+	    
+	    
+	    System.out.println("------------------1.4.1");
+	    BinaryOperator<BankAccount> accumulator1 =
+	    		(acct1, acct2) -> acct1.getBalance() > acct2.getBalance() ? acct1 : acct2;
+	    		
+	    Optional<BankAccount> highestBalAccount = acctList.stream().reduce(accumulator1);
+	    System.out.println(highestBalAccount.get().getAccountHolder());
 	    
 	    
 	    
