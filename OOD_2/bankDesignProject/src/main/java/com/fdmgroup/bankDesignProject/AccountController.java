@@ -48,7 +48,6 @@ public class AccountController {
 	public void removeAccount(Account account) {
 
 		accounts.remove(account);
-	
 		int indexCustomer = -1;
 		int indexAccount = -1;
 		search:
@@ -63,7 +62,11 @@ public class AccountController {
 		}
 		if (indexCustomer !=-1 && indexAccount !=-1 ) {
 			customers.get(indexCustomer).removeAccount(account);
+			
 		}
+		
+		
+//	    customers.stream().filter(cust -> cust.getAccounts().contains(account)).forEach( cust -> cust.getAccounts().remove(account));
 	}
 	
 	public ArrayList<Customer> getCustomers(){
