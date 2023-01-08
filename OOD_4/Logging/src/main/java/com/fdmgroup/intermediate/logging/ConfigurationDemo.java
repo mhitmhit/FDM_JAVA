@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ConfigurationDemo {
+	
 	private static final Logger logger = LogManager.getLogger("Hello");
 
 	public static void main(String[] args) {
@@ -33,6 +34,7 @@ public class ConfigurationDemo {
 		logger.warn("Hello Warn");
 		logger.error("Hello Error");
 		logger.fatal("Hello Fatal");
+		
 
 		/*
 		 * While log4j2 will only log the messages at the right level by default,
@@ -57,7 +59,7 @@ public class ConfigurationDemo {
 		 */
 		tracedMethod();
 
-	}
+	} // end of main
 
 	private static String expensiveOperation() {
 		try {

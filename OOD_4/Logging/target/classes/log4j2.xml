@@ -12,7 +12,6 @@
 		Files, Databases, HTTP, Sockets, etc. For more information about appenders, 
 		see the link here: https://logging.apache.org/log4j/2.x/manual/appenders.html -->
 	<Appenders>
-
 		<Console name="StdOut" target="SYSTEM_OUT">
 			<!-- Each appender should have a layout associated with it. This determines 
 				the output pattern of the messages. -->
@@ -29,18 +28,27 @@
 
 
 	<Loggers>
+	
+	
+	
 		<!-- Since the root logger is appending to the console, all other loggers 
 			will inherit this appender. Thus, all loggers will append to the console. -->
 		<Root level="error">
 			<AppenderRef ref="StdOut" />
 		</Root>
 
+
+
 		<!-- Sometimes it makes more sense to configure logging for all classes 
 			within a package. Because parent loggers are dot-separated, a child logger 
 			will inherit all information from its most direct ancestor. -->
-		<Logger name="com.fdmgroup.intermediate.logging" level="error">
+		<Logger name="com.fdmgroup.intermediate.logging" 
+			level="error">
 			<AppenderRef ref="FileAppender" />
 		</Logger>
+
+
+
 
 		<!-- This logger has two inherited appender: one from the root, one from 
 			the package-level configuration. It overrides the level of its parent. It 
@@ -49,6 +57,9 @@
 		<Logger name="com.fdmgroup.intermediate.logging.LogManagerDemo"
 			level="info">
 		</Logger>
+
+
+
 
 		<!-- This logger has two appenders: StdOut and FileAppender. It overrides 
 			the level, but inherits all appenders. -->
@@ -60,9 +71,17 @@
 			<AppenderRef ref="FileAppender" />
 		</Logger>
 
+
+
+
+
 		<Logger
 			name="com.fdmgroup.intermediate.logging.LoggingMessagesDemo"
 			level="info" />
+
+
+
+
 
 	</Loggers>
 </Configuration>
