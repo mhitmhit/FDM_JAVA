@@ -1,4 +1,25 @@
+<!DOCTYPE html>
 
+<!-- declare page language and direction of text-->
+<html lang="en-US" dir="ltr">
+
+<!-- head for all the stuff the browser needs to know, but 
+will not be dispalyed to the user-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta name="description" content="A description of this site that 
+    will show up in search engine results.">
+    
+    <link href="main.css" rel="stylesheet" >
+    <link rel="icon" href="favicon.ico" >
+    
+    <script src="locationOfFile.js" > </script>
+    
+    <title>html intro and references</title>
+</head>
+
+<body>
 <p> paragraph tag </p>
 
 <p> <em>emphasized text</em> paragraph tag </p>
@@ -121,3 +142,208 @@ dir attributes tells browser which direction text is
 
 
 <!-- commenting stuff -->
+
+
+<p> dealing with special characters</p>
+<p>
+    character entity:
+    &lt; to dispaly lesser than sign
+    &gt; to display greater than sign
+    the W3C keeps track of all these entities
+    so we can look them up as needed.
+    &nbsp; is for a non breaking space, ie:
+    use it when you dont want to break in that location
+</p>
+
+
+
+<a href="https://goeshere.com"> to make a link. a element is an inline element</a>
+<a href="http://goeshere.com"> to make a link. a element is an inline element</a>
+
+<a href="folderName/index.html"> to make a link. a element is an inline element</a>
+<a href="../folderName/index.html"> to make a link. a element is an inline element</a>
+
+
+
+
+<!--Navigation-->
+<nav role="navigation" aria-label="main menu">
+    <ul>
+        <li>link 1</li>
+        <li>link 2</li>
+        <li>link 3</li>
+    </ul>
+</nav>
+
+
+<!-- Images-->
+<p> height and weight are in pixels
+    telling the browser the images size, helps with loading issues
+    and reduces the time used to setup the image.
+    
+    pay attention to image size
+    GIF: good for mini clips, and video recordings.
+    SVG: best for logos, icons, vector files.
+    JPG: make sure it is resized and compressed for the web.
+    PNG:
+</p>
+<img src="file location of the image" alt="alternative text"
+width="400"
+height="300"
+>
+
+<p>
+   serve different images, depending on screen size 
+   create differetn copies of the image, and let browser know 
+   they are available.
+</p>
+<img src="file location of the image" alt="alternative text"
+width="400"
+height="300"
+srcset="smallest_Image1location 2x,
+        mediumi_Image2location 3x,
+        largest_Image3location 4x"
+>
+
+
+<!-- Images and viewport-->
+<img src="file location of the image" alt="alternative text"
+width="400"
+height="300"
+srcset="smallest_Image1location 480w,
+        mediumi_Image2location 960w,
+        largest_Image3location 1440w,
+        larger_Image4location 1920w"
+sizes="(max-width: 480px) 240px,
+       (max-width: 960px) 480px,
+       (max-width: 1440px) 960px"
+>
+
+
+<!-- changing the image depending on size-->
+<picture>
+    <!--when the screen width is at least 600 use med and large-->
+    <!--when the screen width is less than 600 use mobile image-->
+    <source media="(min-width:600px)"
+            srcset="medAndLargeBreakPointImageLocation" >
+    <source srcset="mobileImageFileLocation" >
+    <img src="file location of the image" alt="alternative text"
+    width="400"
+    height="300"
+    >
+</picture>
+
+
+<!--Images with captions-->
+<figure>
+    <img src="imageFileLocation" >
+    <figcaption>
+        text to go as the image caption.
+    </figcaption>
+</figure>
+
+<!-- Audio Files-->
+<audio
+    controls 
+    src="fileName.mp3"
+    loop
+    autoplay
+    >
+</audio>
+
+<audio
+    controls 
+    loop
+    autoplay
+    >
+    <source src="fileName.mp3" >
+    <source src="fileName.ogg" >
+    issues playing the audio file
+</audio>
+
+
+
+<!-- Video Files-->
+<video
+    controls 
+    src="videoFileName.mp4"
+    >
+</video>
+
+<video
+    controls 
+    >
+    <source src="video1FileName.mp4">
+    <source src="video2FileName.av1">
+</video>
+
+
+<!-- Captions -->
+<video
+    controls 
+    >
+    <source src="video1FileName.mp4">
+    <track  src="ClosedCaptionsFIle.vtt"
+            kind="captions"
+            label="english"
+            srclang="en"
+            default>
+    <track  src="ClosedCaptionsFIle.vtt"
+            kind="captions"
+            label="espanol"
+            srclang="es"
+            default>
+</video>
+
+
+
+<!-- Embedding content-->
+<!-- copy the embedding information from the content-->
+
+<iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/KWS-Tecjxdk" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+
+<!-- HTML Page structure -->
+<!-- think about the symantic meaning, not the visual part-->
+<main>this is where the main content is</main>
+<header> not same as head, wrap headers content: nav bar...</header>
+<footer> copy right info, other links, publication date....</footer>
+<article> can wrap around a unit of content, could be a tweet, 
+    a small or big article</article>
+<section> can be used to mark segments of a long essay </section>
+<aside> for content that is off to the side, or not the main 
+    attraction</aside>
+
+
+
+<!-- FORMS-->
+<form action="success.html" method="get">
+    <label for="nameField">Name</label>
+    <input id="nameField" name="name">
+    <label>Email</label>
+    <input name="email">
+    <button> Sign up</button>
+</form>
+
+<form action="success.html" method="get">
+    <label>Name
+        <input name="name" type="text">
+        </input>
+    </label>
+    <button> Sign up</button>
+</form>
+
+
+
+
+
+
+</body>
+</html>
+
