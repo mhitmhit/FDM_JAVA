@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<!-- declare page language and direction of text-->
+<html lang="en-US" dir="ltr">
+
+<!-- head for all the stuff the browser needs to know, but 
+will not be dispalyed to the user-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta name="description" content="A description of this site that 
+    will show up in search engine results.">
+    
+    <link href="main.css" rel="stylesheet" >
+    <link rel="icon" href="favicon.ico" >
+    
+    <script src="locationOfFile.js" > </script>
+    
+    <title>html intro and references</title>
+</head>
+
+<body>
+<p> paragraph tag </p>
+
+<p> <em>emphasized text</em> paragraph tag </p>
+
+<h1>... up to h6 </h1>
+
+<article></article>
+
+
+<i> visual only italics </i>
+
+<em> to convey emphasis on something </em>
+
+<strong> to convey importance, seriousness, urgency </strong>
+
+<b> bold text, style only and not much implications </b>
+
+<ul> unordered list
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<ol> ordered list
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ol>
+
+<dl> definition list: for key value pairs
+   
+    <dt> term 1</dt>
+        <dd> definition of term1 </dd>
+    <dt> key 1</dt>
+        <dd> value of key 1</dd>
+        <dd> addtional value of key 1</dd>
+</dl>
+
+<blockquote>
+    <p> for quotes with a citation
+
+        blalk;djf asojweoijqr a;lksdj
+        asdfasdfj
+        asdflk;j;alskjdf;lakjsd;lkfjqopiwejmv,na;lkdsjf;lkjalks;jdf
+        asd;j asojdf poqiwejfkj ;a;sdkljf ;lkqjhghaklsjdfpqoiwehkglh 
+        asdghpqhwdegjh asdhg d fqpowie fal;ksjdf;lkajsdlk f;
+        lkqwe iorj;flkja;lskdjf
+    </p>
+    <cite> person who said this quote</cite>
+</blockquote>
+
+<p> quotes within a paragraph
+
+    aslk;djf;la jkasdfkj ;alskjdf kjas;dlkjf ;lkqjhghaklsjdfpqoiwehkglhas
+    asdkfj al;ksjd flkajsdio pqkjhdsahgj l;aksjdf 
+    <q>this text will be inside quotation marks</q>
+    as;odg ioqhjweklgh 
+    asdlkjg ;lkajs;ldgkjoiqweuthgk 
+    al;ksjdfklj lkaj  
+</p>
+
+<p> time is used to dispaly time visually </p>
+<time> May 8th 2023</time>
+
+
+<p> time can be conveyed to the computer as a datetime attribute
+    format for date is: datetime="YYYY-MM-DD"
+    or 
+    datetime="07:00"
+    or
+    datetime="hh-mm-ss.ddd+-hh:mm"
+    or
+    datetime="YYYY-MM-DDThh-mm"
+    or
+    datetime="YYYY-MM-DD hh-mm"
+</p>
+<time datetime="2025-05-08"> May 8th 2023</time>
+
+
+<code> inline element to indicate this is code </code>
+
+<p>
+    <br> line break
+</p>
+ 
+<pre>
+    this tag keeps track of spacing and line breaks
+    can show things like:
+    poem:
+        al;jsdf  asdfkjlal;ks
+        asdlfa;  asd;ljflj;lj
+        asdfd;l  a;sldkjf;lkj
+</pre>
+
+<p> subscripts and supperscripts
+    5<sup>2</sup> to get 5 square
+    h<sub>2</sub>o to get h2o
+
+</p>
+
+
+<p> Some global Attributes </p>
+<p
+    class="intro"
+    id="unique_id"
+    lang="fr"
+    dir="ltr"
+    dir="rtl"
+>
+dir attributes tells browser which direction text is
+</p>
+
+<p aria-label="hello world"> Aria roles </p>
+<p aria-hidden="true"> browser takes html elements to build the DOC Dom
+    the DOM is used to build an accessibiliyt tree.
+    we can see the accessibility tree under firefox devTools
+</p>
+
+
+<!-- commenting stuff -->
+
+
+<p> dealing with special characters</p>
+<p>
+    character entity:
+    &lt; to dispaly lesser than sign
+    &gt; to display greater than sign
+    the W3C keeps track of all these entities
+    so we can look them up as needed.
+    &nbsp; is for a non breaking space, ie:
+    use it when you dont want to break in that location
+</p>
+
+
+
+<a href="https://goeshere.com"> to make a link. a element is an inline element</a>
+<a href="http://goeshere.com"> to make a link. a element is an inline element</a>
+
+<a href="folderName/index.html"> to make a link. a element is an inline element</a>
+<a href="../folderName/index.html"> to make a link. a element is an inline element</a>
+
+
+
+
+<!--Navigation-->
+<nav role="navigation" aria-label="main menu">
+    <ul>
+        <li>link 1</li>
+        <li>link 2</li>
+        <li>link 3</li>
+    </ul>
+</nav>
+
+
+<!-- Images-->
+<p> height and weight are in pixels
+    telling the browser the images size, helps with loading issues
+    and reduces the time used to setup the image.
+    
+    pay attention to image size
+    GIF: good for mini clips, and video recordings.
+    SVG: best for logos, icons, vector files.
+    JPG: make sure it is resized and compressed for the web.
+    PNG:
+</p>
+<img src="file location of the image" alt="alternative text"
+width="400"
+height="300"
+>
+
+<p>
+   serve different images, depending on screen size 
+   create differetn copies of the image, and let browser know 
+   they are available.
+</p>
+<img src="file location of the image" alt="alternative text"
+width="400"
+height="300"
+srcset="smallest_Image1location 2x,
+        mediumi_Image2location 3x,
+        largest_Image3location 4x"
+>
+
+
+<!-- Images and viewport-->
+<img src="file location of the image" alt="alternative text"
+width="400"
+height="300"
+srcset="smallest_Image1location 480w,
+        mediumi_Image2location 960w,
+        largest_Image3location 1440w,
+        larger_Image4location 1920w"
+sizes="(max-width: 480px) 240px,
+       (max-width: 960px) 480px,
+       (max-width: 1440px) 960px"
+>
+
+
+<!-- changing the image depending on size-->
+<picture>
+    <!--when the screen width is at least 600 use med and large-->
+    <!--when the screen width is less than 600 use mobile image-->
+    <source media="(min-width:600px)"
+            srcset="medAndLargeBreakPointImageLocation" >
+    <source srcset="mobileImageFileLocation" >
+    <img src="file location of the image" alt="alternative text"
+    width="400"
+    height="300"
+    >
+</picture>
+
+
+<!--Images with captions-->
+<figure>
+    <img src="imageFileLocation" >
+    <figcaption>
+        text to go as the image caption.
+    </figcaption>
+</figure>
+
+<!-- Audio Files-->
+<audio
+    controls 
+    src="fileName.mp3"
+    loop
+    autoplay
+    >
+</audio>
+
+<audio
+    controls 
+    loop
+    autoplay
+    >
+    <source src="fileName.mp3" >
+    <source src="fileName.ogg" >
+    issues playing the audio file
+</audio>
+
+
+
+<!-- Video Files-->
+<video
+    controls 
+    src="videoFileName.mp4"
+    >
+</video>
+
+<video
+    controls 
+    >
+    <source src="video1FileName.mp4">
+    <source src="video2FileName.av1">
+</video>
+
+
+<!-- Captions -->
+<video
+    controls 
+    >
+    <source src="video1FileName.mp4">
+    <track  src="ClosedCaptionsFIle.vtt"
+            kind="captions"
+            label="english"
+            srclang="en"
+            default>
+    <track  src="ClosedCaptionsFIle.vtt"
+            kind="captions"
+            label="espanol"
+            srclang="es"
+            default>
+</video>
+
+
+
+<!-- Embedding content-->
+<!-- copy the embedding information from the content-->
+
+<iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/KWS-Tecjxdk" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+
+<!-- HTML Page structure -->
+<!-- think about the symantic meaning, not the visual part-->
+<main>this is where the main content is</main>
+<header> not same as head, wrap headers content: nav bar...</header>
+<footer> copy right info, other links, publication date....</footer>
+<article> can wrap around a unit of content, could be a tweet, 
+    a small or big article</article>
+<section> can be used to mark segments of a long essay </section>
+<aside> for content that is off to the side, or not the main 
+    attraction</aside>
+
+
+<br>
+<br>
+<br>
+<br>
+<p>------------------------------</p>
+<br>
+<br>
+<br>
+
+<!-- FORMS-->
+<form action="success.html" method="get">
+    <label for="nameField">Name</label>
+    <input id="nameField" name="name">
+    <label>Email</label>
+    <input name="email" type="email">
+    <button> Sign up</button>
+</form>
+
+<form action="success.html" method="get">
+    <label>Name
+        <input  name="name" 
+                type="text"
+                placeholder="enter your name here">
+        </input>
+    </label>
+    <button type="submit"> Sign up</button>
+</form>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- Tables -->
+<Table>
+    <tr>
+        <th>col1</th>
+        <th>col2</th>
+        <th>col3</th>
+    </tr>
+    <tr>
+        <td>sardines</td>
+        <td>cat fish</td>
+        <td>snapper</td>
+    </tr>
+    <tr>
+        <td>sardines2</td>
+        <td>cat fish2</td>
+        <td>snapper2</td>
+    </tr>
+    <tr>
+        <td>sardines3</td>
+        <td>cat fish3</td>
+        <td>snapper3</td>
+    </tr>
+</Table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
+
