@@ -1,0 +1,40 @@
+/* ------------Global------------------------ */
+body {
+    color: #1c2321;
+}
+header a, footer a {
+    color:rgb(199, 191, 191);
+    background-color: #2E294E;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+a:hover {
+    background-color: rgb(46, 41, 78, 60%);
+}
+
+/* ------------Main Banner------------------- */
+header {
+   background-color: #F5B841;
+}
+/* ------------Main Banner------------------- */
+/* .main_banner {
+    
+} */
+/* ------------Top Books--------------------- */
+.top_books {
+    background-color: #F46036;
+}
+/* ------------Banner Section---------------- */
+.banners {
+    background-color: #F5B841;
+}
+/* ------------Category Section-------------- */
+.categories {
+    background-color: #2E294E;
+    color: #e1dfe2;
+}
+/* ------------Footer Section---------------- */
+footer {
+    background-color: #BBB5BD;
+}
