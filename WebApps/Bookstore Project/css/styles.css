@@ -1,39 +1,105 @@
 /* ------------Global------------------------ */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *::after {
+    box-sizing: inherit;
+}
 body {
     color: #1c2321;
+    margin: 25px;
+    font-family: 'Lato', 'Open Sans', sans-serif;
 }
 header a, footer a {
     color:rgb(199, 191, 191);
     background-color: #2E294E;
     text-decoration: none;
     border-radius: 6px;
+    padding: 5px;
 }
-
 a:hover {
     background-color: rgb(46, 41, 78, 60%);
 }
+section {
+    padding:10px;
+    margin:10px;
+}
+.growSection {
+    flex-grow: 1;
+}
+/* ------------Main Banner-------------- */
+.main_banner img {
+    width: 100%;
+}
 
-/* ------------Main Banner------------------- */
+/* ------------Header------------------- */
 header {
    background-color: #F5B841;
+   
 }
-/* ------------Main Banner------------------- */
-/* .main_banner {
-    
-} */
+.title {
+    margin: 0;
+}
+.headerNav, .footerNav {
+    width: 60vw;
+    padding: 0 0 10px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ------------Mid Section---------------*/
+.midsection {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+}
+
 /* ------------Top Books--------------------- */
-.top_books {
+.midSectionLeft {
+    width: 30vw;
     background-color: #F46036;
 }
-/* ------------Banner Section---------------- */
-.banners {
-    background-color: #F5B841;
+        .book {
+            border-style: solid;
+            border-color: black;
+        }
+        .bookTileLeft {
+            display: inline-block;
+        }
+        .bookTileRight {
+            display: inline-block;
+        }
+        
+
+/* ------------Mid Section Right---------------*/
+.midSectionRight {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 16x;
 }
-/* ------------Category Section-------------- */
-.categories {
-    background-color: #2E294E;
-    color: #e1dfe2;
-}
+
+        /* ------------Banner Section---------------- */
+        .banners {
+            background-color: #F5B841;
+        }
+                .banner {
+                    border-style: solid;
+                    border-color: black;
+                }
+        /* ------------Category Section-------------- */
+        .categories {
+            display: flex;
+            justify-content: center;
+            background-color: #2E294E;
+            color: #e1dfe2;
+        }
+                .category {
+                    flex-wrap: nowrap;
+                    border-style: solid;
+                    border-color: white;
+                }
+
 /* ------------Footer Section---------------- */
 footer {
     background-color: #BBB5BD;
