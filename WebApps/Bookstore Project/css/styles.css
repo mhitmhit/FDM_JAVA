@@ -27,9 +27,12 @@ section {
 .growSection {
     flex-grow: 1;
 }
-/* ------------Main Banner-------------- */
-.main_banner img {
-    width: 100%;
+.navbar-toggler {
+    color:white;
+    background-color: #2E294E;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    border-radius: 6px;
+    padding: 5px;
 }
 
 /* ------------Header------------------- */
@@ -38,6 +41,8 @@ header {
    
 }
 .title {
+    text-align: center;
+    line-height: 2em;
     margin: 0;
 }
 .headerNav, .footerNav {
@@ -47,9 +52,16 @@ header {
     text-align: center;
 }
 
+/* ------------Main Banner-------------- */
+.main_banner {
+    padding: 0;
+    margin: 10px 0;
+}
+.main_banner img {
+    width: 100%;
+}
 /* ------------Mid Section---------------*/
 .midsection {
-    width: 100%;
     display: flex;
     gap: 16px;
 }
@@ -58,15 +70,17 @@ header {
 .midSectionLeft {
     width: 30vw;
     background-color: #F46036;
+
 }
-        .book {
+        /* .book {
             border-style: solid;
             border-color: black;
-        }
+        } */
         .bookTileLeft {
             display: inline-block;
         }
         .bookTileRight {
+            text-align: center;
             display: inline-block;
         }
         
@@ -81,26 +95,59 @@ header {
 
         /* ------------Banner Section---------------- */
         .banners {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             background-color: #F5B841;
         }
                 .banner {
-                    border-style: solid;
-                    border-color: black;
+                    min-height: 80px;
+                    background-color: lightblue;
+                    background-repeat: no-repeat;
+                    background-image: url(../images/bannerTest1.jpg);
+                    background-size: cover;
                 }
         /* ------------Category Section-------------- */
         .categories {
             display: flex;
+            gap: 30px;
             justify-content: center;
             background-color: #2E294E;
             color: #e1dfe2;
         }
                 .category {
-                    flex-wrap: nowrap;
-                    border-style: solid;
-                    border-color: white;
+                    min-height: 120px;
+                    min-width: 100px;
+                    background-repeat: no-repeat;
+                    background-image: url(../images/banner1.jfif);
+                    background-size: cover;
                 }
 
 /* ------------Footer Section---------------- */
 footer {
     background-color: #BBB5BD;
+    font-size: small;
 }
+
+/* ----------------------------------------- */
+/* ------------MEDIA Queries---------------- */
+@media screen and (max-width: 800px) {
+    header a, footer a {
+        font-size: 0.8em;
+        padding: 0px;
+    }
+
+    .bookTileRight {
+        font-size: 0.6em;
+    }
+
+    .categories {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .category {
+        max-width: 200px;
+    }
+}
+
