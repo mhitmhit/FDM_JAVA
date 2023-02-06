@@ -12,7 +12,7 @@ body {
 }
 header a, footer a {
     color:rgb(199, 191, 191);
-    background-color: #2E294E;
+    background-color: #32313d;
     text-decoration: none;
     border-radius: 6px;
     padding: 5px;
@@ -37,7 +37,7 @@ section {
 
 /* ------------Header------------------- */
 header {
-   background-color: #F5B841;
+   background-color: #f5d189;
    
 }
 .title {
@@ -64,12 +64,13 @@ header {
 .midsection {
     display: flex;
     gap: 16px;
+    margin:15px;
 }
 
 /* ------------Top Books--------------------- */
 .midSectionLeft {
     width: 30vw;
-    background-color: #F46036;
+    background-color: #e7d1ca;
 
 }
         /* .book {
@@ -98,7 +99,7 @@ header {
             display: flex;
             flex-direction: column;
             gap: 15px;
-            background-color: #F5B841;
+            background-color: #f0daae;
         }
                 .banner {
                     min-height: 80px;
@@ -112,7 +113,7 @@ header {
             display: flex;
             gap: 30px;
             justify-content: center;
-            background-color: #2E294E;
+            background-color: #c2c2c9;
             color: #e1dfe2;
         }
                 .category {

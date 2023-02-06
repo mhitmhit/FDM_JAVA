@@ -20,3 +20,10 @@ const backpack = {
     this.strapLength.right = lengthRight;
   },
 };
+
+var query = "pocketNum";
+
+console.log("the backpack object is:" , " 2 something else");
+console.log("backpack name is: " , backpack);
+console.log(backpack[query]);
+
