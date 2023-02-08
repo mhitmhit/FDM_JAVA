@@ -2,6 +2,9 @@ package com.fdmgroup.spring_core_exercise1.model;
 
 import java.math.BigDecimal;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Account {
 	
 	private long accountNumber;

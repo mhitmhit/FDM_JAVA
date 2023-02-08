@@ -18,31 +18,30 @@ import com.fdmgroup.spring_core_exercise1.repositories.UserMapRepository;
 @Configuration
 public class Config {
 	
-	@Bean
-	public User user() {
-		return new User();
-	}
+//	@Bean
+//	public User user() {
+//		return new User();
+//	}
 	
-	@Bean
-	public Account account() {
-		return new Account();
-	}
+//	@Bean
+//	public Account account() {
+//		return new Account();
+//	}
 	
+//	@Bean
+//	public AccountRepository accountRepository(Map<Long, Account> acctMap) {
+//		return new AccountMapRepository(acctMap);
+//	}
 	
-	@Bean
-	public AccountRepository accountRepository(Map<Long, Account> acctMap) {
-		return new AccountMapRepository(acctMap);
-	}
-	
-	@Bean
-	public UserRepository userRepository(Map<Long, User> userRepo) {
-		return new UserMapRepository(userRepo);
-	}
+//	@Bean
+//	public UserRepository userRepository(Map<Long, User> userRepo) {
+//		return new UserMapRepository(userRepo);
+//	}
 
-	@Bean
-	public Teller teller(AccountRepository accountRepository, UserRepository userRepository) {
-		return new Teller(accountRepository, userRepository);
-	}
+//	@Bean
+//	public Teller teller(AccountRepository accountRepository, UserRepository userRepository) {
+//		return new Teller(accountRepository, userRepository);
+//	}
 	
 	
 }

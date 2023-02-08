@@ -1,22 +1,41 @@
-package com.fdmgroup.Spring_core_demo.model;
+package com.fdmgroup.springcoredemo.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
+@Entity
 public class Course {
+	@Id
 	private String courseCode;
+	@OneToMany
 	private List<Trainee> trainees;
 
+	public Course() {
+		this.trainees = new ArrayList<>();
+	}
+
+	@Autowired
 	public Course(String courseCode, List<Trainee> trainees) {
 		super();
 		this.courseCode = courseCode;
 		this.trainees = trainees;
 	}
-	
+
 	public void addTrainee(Trainee trainee) {
 		this.trainees.add(trainee);
 	}
-	
+
 	public void removeTrainee(Trainee trainee) {
 		this.trainees.remove(trainee);
 	}

@@ -1,8 +1,19 @@
-package com.fdmgroup.Spring_core_demo.model;
+package com.fdmgroup.springcoredemo.model;
+
 
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
+@Entity
 public class Trainee {
+	@Id
 	private long traineeId;
 	private String name;
 	private String email;

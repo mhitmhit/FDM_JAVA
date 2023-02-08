@@ -3,10 +3,13 @@ package com.fdmgroup.spring_core_exercise1.repositories;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import com.fdmgroup.spring_core_exercise1.interfaces.AccountRepository;
 import com.fdmgroup.spring_core_exercise1.model.Account;
 
-public class AccountMapRepository implements AccountRepository<Account, Long> {
+@Repository
+public class AccountMapRepository implements AccountRepository {
 
 	private Map<Long, Account> accountMapRepository;
 
@@ -74,13 +77,5 @@ public class AccountMapRepository implements AccountRepository<Account, Long> {
 	public String toString() {
 		return accountMapRepository.toString();
 	}
-
-
-
-	
-	
-
-
-
 
 }

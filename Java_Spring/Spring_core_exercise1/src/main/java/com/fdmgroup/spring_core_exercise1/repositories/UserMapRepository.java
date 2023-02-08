@@ -2,10 +2,14 @@ package com.fdmgroup.spring_core_exercise1.repositories;
 
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
 import com.fdmgroup.spring_core_exercise1.interfaces.UserRepository;
 import com.fdmgroup.spring_core_exercise1.model.User;
 
-public class UserMapRepository implements UserRepository<User, Long> {
+@Repository
+public class UserMapRepository implements UserRepository {
 
 	
 	private Map<Long, User> userMapRepository;

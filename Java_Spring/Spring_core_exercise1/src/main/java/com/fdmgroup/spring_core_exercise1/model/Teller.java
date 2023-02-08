@@ -2,16 +2,21 @@ package com.fdmgroup.spring_core_exercise1.model;
 
 import java.math.BigDecimal;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.fdmgroup.spring_core_exercise1.interfaces.AccountRepository;
 import com.fdmgroup.spring_core_exercise1.interfaces.UserRepository;
 import com.fdmgroup.spring_core_exercise1.repositories.AccountMapRepository;
 import com.fdmgroup.spring_core_exercise1.repositories.UserMapRepository;
 
+@Component
 public class Teller {
 
 	private AccountRepository accountRepo;
 	private UserRepository userRepo;
 
+	@Autowired
 	public Teller(AccountRepository accountMapRepo, UserRepository userMapRepo) {
 		super();
 		this.accountRepo = accountMapRepo;

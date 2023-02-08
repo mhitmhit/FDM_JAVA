@@ -29,7 +29,7 @@ public class SpringCoreExercise1Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("starting app");
+		System.out.println("----------------- Spring Core Exercise 1");
 		
 		Account acct1 = ctx.getBean(Account.class);
 		acct1.setAccountNumber(123456789);

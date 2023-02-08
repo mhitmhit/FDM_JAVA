@@ -1,5 +1,7 @@
 package com.fdmgroup.spring_core_exercise1.interfaces;
 
-public interface AccountRepository<Account, Long> extends Repository<Account, Long> {
+import com.fdmgroup.spring_core_exercise1.model.Account;
+
+public interface AccountRepository extends Repository<Account, Long> {
 	
 }

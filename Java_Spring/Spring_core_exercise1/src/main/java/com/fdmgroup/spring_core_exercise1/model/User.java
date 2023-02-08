@@ -1,5 +1,8 @@
 package com.fdmgroup.spring_core_exercise1.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
 
 	private long userId;
