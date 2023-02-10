@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th=https://www.thymeleaf.org></html>>
+<head>
+<meta charset="UTF-8">
+<title>update page</title>
+</head>
+<body>
+<h1> Update User Page</h1>
+
+	<form method="post"  action="processUpdate" th:object="${user}">
+	
+		<input type ="hidden" th:field="*{id}" >
+		<label> First Name: </label>
+		<input name="firstName" type="text" th:field="*{firstName}">
+		<br>
+		
+		<label> Last Name: </label>
+		<input name="lastName" type="text" th:field="*{lastName}">
+		<br>
+		
+		<label> Email: </label>
+		<input name="email" type="email" required th:field="*{email}">
+		<br>
+		
+		<label> User Name: </label>
+		<input name="username" type="text" readonly th:field="*{username}">
+		<br>
+		
+		<label> password: </label>
+		<input name="newPassword" type="password" required>
+		<br>
+		
+		<input type="submit" value="Update">
+		
+	</form>
+	
+	
+</body>
+</html>

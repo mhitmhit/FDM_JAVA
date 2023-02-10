@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th=https://www.thymeleaf.org>
 <meta charset="UTF-8">
 <title> Registration Page </title>
 <body>
 
-	 <h1> Registration HTML</h1>
+	 <h1> Registration HTML !!!!!</h1>
 	
 	<h2> register here </h2>
+	<a href="/login">Login</a>
+	<div>
+		<!-- replace content of this element with what passed to th:text
+			variable expression: ${variableName}
+			allows us to grab a value from within this variable where
+			the variable refers to an attribute within the req/resp.
+		-->
+		<h2 th:text="${message}"></h2>
+	</div>
 	
 	<form method="post"  action="/processRegistration">
 	

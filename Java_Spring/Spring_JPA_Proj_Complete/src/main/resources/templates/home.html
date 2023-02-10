@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html  xmlns:th=https://www.thymeleaf.org>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2> Logged in as <span th:text="${session.username}"></span></h2>
+	<h3>Media list:</h3>
+	<ul>
+		<li th:each="media: ${mediaList}" th:text="${media.title}"> </li>
+	</ul>
+	<a href="logout"> Log out</a>
+	
+	<a href="update"> Update Info</a>
+	
+</body>
+</html>
