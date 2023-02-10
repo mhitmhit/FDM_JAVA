@@ -54,6 +54,10 @@ public class SpringCoreDemoApplication implements CommandLineRunner {
 		t2.setLocation("Toronto");
 		t2.setStream("JAVA");
 		
+		// to create objects faster:
+		//ctx. getBean(User.class, 1, "John", "Doe", "jdoe@email.com", "j.doe", "password");
+		
+		
 		// Spring handles creating the actual class under the hood
 		TraineeRepository traineeRepo = ctx.getBean(TraineeRepository.class);
 
