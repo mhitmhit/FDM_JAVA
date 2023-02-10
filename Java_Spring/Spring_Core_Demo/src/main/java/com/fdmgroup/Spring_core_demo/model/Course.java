@@ -1,16 +1,33 @@
 package com.fdmgroup.Spring_core_demo.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+@Component
+@Scope("prototype")
+@Entity
 public class Course {
+	@Id
 	private String courseCode;
+	@OneToMany
 	private List<Trainee> trainees;
 
 	public Course(String courseCode, List<Trainee> trainees) {
 		super();
 		this.courseCode = courseCode;
 		this.trainees = trainees;
+	}
+	
+	public Course() {
+		this.trainees = new ArrayList<>();
 	}
 	
 	public void addTrainee(Trainee trainee) {

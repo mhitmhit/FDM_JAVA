@@ -1,5 +1,7 @@
 package com.fdmgroup.Spring_core_demo;
 
+import java.util.Optional;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,12 +9,13 @@ import org.springframework.context.ApplicationContext;
 
 import com.fdmgroup.Spring_core_demo.model.Course;
 import com.fdmgroup.Spring_core_demo.model.Trainee;
+import com.fdmgroup.Spring_core_demo.repository.TraineeRepository;
 
 
 // This class doubles as a Config class
 @SpringBootApplication
 public class SpringCoreDemoApplication implements CommandLineRunner {
-	
+//public class SpringCoreDemoApplication{
 	private ApplicationContext ctx;
 	
 	// I want Spring to inject the ApplicationContext object into the instance of this class
@@ -25,7 +28,7 @@ public class SpringCoreDemoApplication implements CommandLineRunner {
 		SpringApplication.run(SpringCoreDemoApplication.class, args);
 	}
 
-	@Override
+//	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("-------------- Spring Core Demo");
 		Trainee t1 = ctx.getBean(Trainee.class);
@@ -51,9 +54,27 @@ public class SpringCoreDemoApplication implements CommandLineRunner {
 		t2.setLocation("Toronto");
 		t2.setStream("JAVA");
 		
-		System.out.println(t2);
-		System.out.println(t1);
-		System.out.println(t1 == t2);
+		// to create objects faster:
+		//ctx. getBean(User.class, 1, "John", "Doe", "jdoe@email.com", "j.doe", "password");
+		
+		
+		// Spring handles creating the actual class under the hood
+		TraineeRepository traineeRepo = ctx.getBean(TraineeRepository.class);
+
+		traineeRepo.save(t1);
+		traineeRepo.save(t2);
+		traineeRepo.save(new Trainee(3, "Luis Tuapante", "luis.tuapante@fdmgroup.com", "NY", "JAVA", 0));
+		traineeRepo.save(new Trainee(4, "Anthony Jimenez", "anthony.jimenez2@email.com", "NY", "JAVA", 0));
+
+		Optional<Trainee> retrievedTrainee = traineeRepo.findByEmail("ben.hessel@fdmgroup.com");
+
+		if (retrievedTrainee.isPresent()) {
+			System.out.println(retrievedTrainee.get());
+		}
+
+		System.out.println("Trainees with FDM email: ");
+		traineeRepo.findByEmailFragment("fdmgroup").forEach(t -> System.out.println(t));
+		
 		
 	}
 

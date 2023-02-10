@@ -2,7 +2,21 @@ package com.fdmgroup.Spring_core_demo.model;
 
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+@Component
+@Scope("prototype")
+@Entity
 public class Trainee {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="TRAINEE_ID_GEN")
+	@SequenceGenerator(name="TRAINEE_ID_GEN", sequenceName="TRAINEE_ID_SEQ")
 	private long traineeId;
 	private String name;
 	private String email;
