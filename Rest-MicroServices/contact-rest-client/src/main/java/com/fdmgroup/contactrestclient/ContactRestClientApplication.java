@@ -24,7 +24,8 @@ public class ContactRestClientApplication {
 	
    @Bean
     public WebClient webClient(WebClient.Builder builder) {
-        return builder.baseUrl(CONTACT_API_ROOT)
+        return builder
+        		.baseUrl(CONTACT_API_ROOT)
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .build();
     }

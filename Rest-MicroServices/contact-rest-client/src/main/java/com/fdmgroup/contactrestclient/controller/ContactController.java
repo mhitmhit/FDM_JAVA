@@ -23,8 +23,8 @@ public class ContactController {
 	
 	@GetMapping
 	public String getContacts(Model model){
-		//List<Contact> contacts =contactService.retrieveContacts();
-		//model.addAttribute("contacts", contacts);
+		List<Contact> contacts =contactService.retrieveContacts();
+		model.addAttribute("contacts", contacts);
 		return "index";
 	}
 }
