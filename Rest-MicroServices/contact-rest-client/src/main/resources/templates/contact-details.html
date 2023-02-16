@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head>
-	<title> Contacts List </title>
+	<title>Contact Details Page</title>
 </head>
 <body>
-	<h1> Index Page </h1>
+	<h1>Contact Details</h1>
 	
-	<h2> List of Contacts </h2>
-	<a href="/createContact"> create contact </a>
-	<table>
+		<table>
 		<tr>
 			<th>ID</th>
 			<th>FirstName</th>
@@ -16,16 +14,15 @@
 			<th>LastName</th>
 			<th>PhoneNumber</th>
 		</tr>
-		<tr  th:each="contact: ${contacts}">
+		<tr>
 			<td th:text="${contact.id}"></td>
 			<td th:text="${contact.firstName}"></td>
 			<td th:text="${contact.middleName}"></td>
 			<td th:text="${contact.lastName}"></td>
 			<td th:text="${contact.phoneNumber}"></td>
-			<td>
-				<a th:href="@{/view/{id}(id=${contact.id})}">details</a>
-			 </td>
 		</tr>
 	</table>
+	
+	
 </body>
 </html>

@@ -3,10 +3,8 @@ package com.fdmgroup.contactrestapi.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.fdmgroup.contactrestapi.model.Contact;
 import com.fdmgroup.contactrestapi.repository.ContactRepository;
@@ -16,6 +14,7 @@ public class ContactService {
 
 	private ContactRepository contactRepo;
 
+	@Autowired
 	public ContactService(ContactRepository contactRepo) {
 		super();
 		this.contactRepo = contactRepo;

@@ -26,4 +26,12 @@ public class ContactService {
 		return contactClient.retrieveContacts();
 	}
 	
+	public Contact retrieveContact(long id) {
+		return contactClient.retrieveContact(id);
+	}
+
+	public void createContact(Contact contact) {
+		contactClient.createContact(contact);
+	}
+	
 }
