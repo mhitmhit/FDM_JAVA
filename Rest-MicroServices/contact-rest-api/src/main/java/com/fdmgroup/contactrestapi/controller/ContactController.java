@@ -71,7 +71,6 @@ public class ContactController {
 	})
 	@PostMapping
 	public ResponseEntity<Contact> createContact(@RequestBody Contact contact) {
-		System.out.println(contact);
 		Contact createdContact = contactService.createContact(contact);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(contact.getId())

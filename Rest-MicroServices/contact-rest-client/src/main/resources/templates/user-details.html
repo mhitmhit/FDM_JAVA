@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<title> Users List </title>
+	<style>
+		table, tr, th, td {
+		 	border: 1px solid black;
+		 	text-align: center;
+			};
+		h1 {
+			text-align:center;
+			}
+			
+	</style>
+</head>
+<body>
+	<div style="text-align:center">
+		<h1> Users Page </h1>
+	</div>
+	<div style="text-align:center">
+		---------------------------------------------------------------
+	</div>
+	<br>
+	<div style="text-align:center">
+		<a href="/users/userRegistration"> register a new User </a>	
+	</div>
+	<br>
+	<div style="text-align:center">
+		---------------------------------------------------------------
+	<br>
+	</div>
+	<h2> Log in to your account </h2>
+	
+	<form method="POST" action="/users/processLogin" >
+		User Name: 	<input type="text" name="username">  <br>
+		Password: 	<input type="text" name="password"> <br>
+		<input type="submit" value="Log in">
+	</form>
+	
+	<div style="text-align:center">
+		---------------------------------------------------------------
+	</div>
+	<h2> List of users </h2>
+	
+	<table>
+		<tr>
+			<th>User id</th>
+			<th>Email</th>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>userName</th>
+		</tr>
+		<tr  th:each="user: ${users}">
+			<td th:text="${user.id}"></td>
+			<td th:text="${user.email}"></td>
+			<td th:text="${user.firstName}"></td>
+			<td th:text="${user.lastName}"></td>
+			<td th:text="${user.username}"></td>
+		</tr>
+	</table>
+</body>
+</html>

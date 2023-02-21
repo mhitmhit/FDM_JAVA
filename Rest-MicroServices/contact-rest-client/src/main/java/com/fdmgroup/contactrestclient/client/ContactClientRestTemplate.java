@@ -24,10 +24,8 @@ public class ContactClientRestTemplate implements ContactClient {
 
 	@Override
 	public List<Contact> retrieveContacts() {
-		
 		return webClient.get()
-				.uri(builder -> builder.path("api/v1/contacts")
-				.build())
+				.uri( builder -> builder.path("api/v1/contacts").build()  )
 				.retrieve() // retrieve- to consume now, exchange - to consume later 
 				.bodyToFlux(Contact.class)
 				.collectList()
@@ -72,7 +70,12 @@ public class ContactClientRestTemplate implements ContactClient {
 
 	@Override
 	public void deleteContact(long id) {
-		// TODO Auto-generated method stub
+		webClient.delete()
+			.uri( builder->builder.path("/api/v1/contacts/{id}").build(id) )
+			.retrieve()
+			.bodyToMono(Contact.class)
+			.block()
+			;
 
 	}
 

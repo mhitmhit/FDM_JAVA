@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta>
+<title>Employee Page</title>
+	<style>
+		table, tr, th, td {
+		 	border: 1px solid black;
+		 	text-align: center;
+			}
+		h1 {
+			text-align: center;
+			}
+	</style>
+</head>
+<body>
+	<div style="text-align:center">
+		---------------------------------------------------------------
+	</div>
+<h1> List of All Employees </h1>
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>salary</th>
+			<th>state</th>
+			<th>country</th>
+		</tr>
+		<tr  th:each="employee: ${employees}">
+		 	<td th:text="${employee.id}"></td>
+			<td th:text="${employee.firstName}"></td>
+			<td th:text="${employee.lastName}"></td>
+			<td th:text="${employee.salary}"></td>
+			<td th:text="${employee.state}"></td>
+			<td th:text="${employee.country}"></td>
+			<td>
+				<a th:href="@{/view/{id}(id=${employee.id})}">View Details</a>
+			 </td>
+			 <td>
+				<a th:href="@{/update/{id}(id=${employee.id})}">Update Details</a>
+			 </td>
+			 <td>
+				<a th:href="@{/delete/{id}(id=${employee.id})}">delete</a>
+			 </td>
+		</tr>
+	</table>
+	<div style="text-align:center">
+		<br>
+		<br>
+		---------------------------------------------------------------
+		<br>
+	</div>
+	
+	<div style="text-align:center">
+	<h2> Create a new Employee </h2>
+	<a href="/createEmployee"> create Employee </a>
+	</div>
+	<div style="text-align:center">
+		---------------------------------------------------------------
+	</div>
+</body>
+</html>

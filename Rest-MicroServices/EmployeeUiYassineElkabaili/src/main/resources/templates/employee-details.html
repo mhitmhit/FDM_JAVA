@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<title>employee details</title>
+	<style>
+		table, tr, th, td {
+		 	border: 1px solid black;
+		 	text-align: center;
+			};
+		h1 {
+			text-align:center;
+			}
+			
+	</style>
+</head>
+<body>
+<div style="text-align:center">
+		<h1> employee details Page </h1>
+</div>
+	<div style="text-align:center">
+		---------------------------------------------------------------
+	</div>
+	<br>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>salary</th>
+			<th>state</th>
+			<th>country</th>
+		</tr>
+		<tr>
+		 	<td th:text="${employee.id}"></td>
+			<td th:text="${employee.firstName}"></td>
+			<td th:text="${employee.lastName}"></td>
+			<td th:text="${employee.salary}"></td>
+			<td th:text="${employee.state}"></td>
+			<td th:text="${employee.country}"></td>
+		</tr>
+		
+	</table>
+	<br>
+	<div style="text-align:center">
+		---------------------------------------------------------------
+	</div>
+	<br>
+</body>
+</html>

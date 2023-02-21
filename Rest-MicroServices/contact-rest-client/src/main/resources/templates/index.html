@@ -2,6 +2,12 @@
 <html xmlns:th="http://thymeleaf.org">
 <head>
 	<title> Contacts List </title>
+	<style>
+		table, tr, th, td {
+		 	border: 1px solid black;
+		 	text-align: center;
+			}
+	</style>
 </head>
 <body>
 	<h1> Index Page </h1>
@@ -24,6 +30,12 @@
 			<td th:text="${contact.phoneNumber}"></td>
 			<td>
 				<a th:href="@{/view/{id}(id=${contact.id})}">details</a>
+			 </td>
+			 <td>
+				<a th:href="@{/update/{id}(id=${contact.id})}">update</a>
+			 </td>
+			 <td>
+				<a th:href="@{/delete/{id}(id=${contact.id})}">delete</a>
 			 </td>
 		</tr>
 	</table>

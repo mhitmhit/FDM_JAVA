@@ -34,4 +34,11 @@ public class ContactService {
 		contactClient.createContact(contact);
 	}
 	
+	public void updateContact(Contact contact) {
+		contactClient.updateContact(contact);
+	}
+	
+	public void deleteContact(long id) {
+		contactClient.deleteContact(id);
+	}
 }

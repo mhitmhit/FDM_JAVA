@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<title>Create an Employee</title>
+</head>
+<body>
+	<h1>Register a new Employee</h1>
+	
+	<form method="POST" action="/createEmployee">
+		FirstName: 	<input type="text" name="firstName"> <br>
+		Last Name: 	<input type="text" name="lastName"> <br>
+		salary: 	<input type="text" name="salary"> <br>
+		state: 		<input type="text" name="state"> <br>
+		country: 	<input type="text" name="country"> <br>
+					<input type="submit" value="create">
+	</form>
+</body>
+</html>
