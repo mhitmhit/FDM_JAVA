@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
+import { ProductsService } from './../../../services/products.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-exercise-categories',
   templateUrl: './exercise-categories.component.html',
   styleUrls: ['./exercise-categories.component.css']
 })
-export class ExerciseCategoriesComponent {
+export class ExerciseCategoriesComponent implements OnInit {
 
-  categories: string[] = [
-    'Home',
-    'Electronics',
-    'Fashion'
-  ];
+  categories: string[] = [];
 
-  constructor(){}
+  constructor(private ProductsService: ProductsService){}
 
-  
+  ngOnInit(): void {
+    this.categories = this.ProductsService.getCategories();
+  }
+
 }
 
