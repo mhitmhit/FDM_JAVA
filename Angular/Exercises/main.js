@@ -1,0 +1,18 @@
+"use strict";
+exports.__esModule = true;
+var Post_1 = require("./Post");
+var post1 = new Post_1.Post("first post about the sun", 10, 10, false, false);
+post1.ClickUpVotePost();
+console.log(" post content: " + post1.GetPostContent());
+console.log(" number of upvotes is: " + post1.upVotes);
+console.log(" number of downVotes is: " + post1.downVotes);
+console.log("state of the buttons is:");
+console.log("           up vote button is: " + post1.upvoteButtonOn);
+console.log("           down vote button is: " + post1.downvoteButtonOn);
+post1.ClickUpVotePost();
+console.log(" post content: " + post1.GetPostContent());
+console.log(" number of upvotes is: " + post1.upVotes);
+console.log(" number of downVotes is: " + post1.downVotes);
+console.log("state of the buttons is:");
+console.log("           up vote button is: " + post1.upvoteButtonOn);
+console.log("           down vote button is: " + post1.downvoteButtonOn);
