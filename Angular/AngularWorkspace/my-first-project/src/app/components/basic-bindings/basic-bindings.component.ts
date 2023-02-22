@@ -28,6 +28,4 @@ export class BasicBindingsComponent implements OnInit {
     // runs when the toggle image is clicked
   }
 
-
-
 }
