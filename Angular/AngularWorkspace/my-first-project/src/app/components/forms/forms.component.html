@@ -1,0 +1,33 @@
+<p>--------------------------------</p>
+<div>
+  <p>forms </p>
+
+<!-- create a templatre ref var so we can refer to the form
+outside of the form -->
+<form ngForm #theForm="ngForm" >
+  <label>Username:</label><br>
+  <input ngModel type="text" name="theUsername" required minlength="10"/><br>
+  <label>Password:</label><br>
+  <input ngModel type="text" name="thePassword" /><br>
+</form>
+
+<p> the form is: {{ theForm.value | json }}</p>
+<p> the form is valid: {{ theForm.valid }}</p>
+
+
+<!-- form using data binding: -->
+<!-- <form>
+  <label>Username:</label><br>
+  <input [(ngModel)]="usernameVar" type="text" name="theUsername" /><br>
+  <label>Password:</label><br>
+  <input type="text" name="thePassword" /><br>
+</form>
+
+<p> {{ 'usernameVar is: ' + usernameVar}}</p> -->
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+

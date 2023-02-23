@@ -1,0 +1,22 @@
+
+<p>----------------------------------------------------------</p>
+<div>
+  <p>login-twowaybinding works!</p>
+
+  <label>User Name: </label>
+  <input [(ngModel)]="username" />
+  <br>
+  <label>Pass Word: </label>
+  <input [(ngModel)]="password" />
+  <br>
+  <br>
+  <button (click)="validate()">Login</button>
+  <br>
+  <h3 *ngIf="credentialsValid"> Welcome {{username}} </h3>
+  <h3 *ngIf="!credentialsValid"> Wrong username or password </h3>
+  <!-- <h3 *ngIf="username === CORRECT_USERNAME && password === CORRECT_PASSWORD">Welcome {{username}}</h3>
+  <h3 *ngIf="username !== CORRECT_USERNAME || password !== CORRECT_PASSWORD">Wrong Username or Password</h3> -->
+
+  <br>
+</div>
+
