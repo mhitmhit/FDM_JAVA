@@ -4,11 +4,16 @@
 
 <!-- create a templatre ref var so we can refer to the form
 outside of the form -->
-<form ngForm #theForm="ngForm" >
+<form ngForm #theForm="ngForm" (ngSubmit)="processTheForm(theForm)">
   <label>Username:</label><br>
-  <input ngModel type="text" name="theUsername" required minlength="10"/><br>
+  <input ngModel #usernameRef="ngModel" type="text" name="theUsername" required minlength="10"/><br>
+  <div *ngIf="!usernameRef.valid && usernameRef.touched" class="errors-section">
+    <p>The username is required</p>
+    <p>The username must be at least 10 characters </p>
+  </div>
   <label>Password:</label><br>
-  <input ngModel type="text" name="thePassword" /><br>
+  <input ngModel type="text" name="thePassword" required minlength="8"/><br>
+  <input type="submit" />
 </form>
 
 <p> the form is: {{ theForm.value | json }}</p>

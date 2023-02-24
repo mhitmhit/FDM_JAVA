@@ -10,6 +10,8 @@ import { LoginTwowaybindingComponent } from './components/login-twowaybinding/lo
 import { PipesComponent } from './components/pipes/pipes.component';
 import { DoublePipe } from './components/pipes/double.pipe';
 import { FormsComponent } from './components/forms/forms.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FormsComponent } from './components/forms/forms.component';
     LoginTwowaybindingComponent,
     PipesComponent,
     DoublePipe,
-    FormsComponent
+    FormsComponent,
+    NavBarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
