@@ -71,6 +71,7 @@ public class ContactController {
 	})
 	@PostMapping
 	public ResponseEntity<Contact> createContact(@RequestBody Contact contact) {
+		System.out.println("post mapping called !!!!!");
 		Contact createdContact = contactService.createContact(contact);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(contact.getId())
@@ -91,6 +92,7 @@ public class ContactController {
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Contact> deleteContact(@PathVariable long id) {
+		System.out.println("delete mapping called !!!!!");
 		Contact deletedContact = contactService.deleteContact(id);
 
 		return ResponseEntity.created(null).body(deletedContact);
