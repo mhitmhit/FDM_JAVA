@@ -1,0 +1,21 @@
+<div>
+  <h3>Update-contact with ID : {{contactId}} </h3>
+  <form ngForm #theForm="ngForm" (ngSubmit)="updateContact(theForm)">
+    <label>first Name:</label><br>
+    <input ngModel #usernameRef="ngModel" type="text" name="firstName" required/><br>
+
+    <label>middle Name:</label><br>
+    <input ngModel #usernameRef="ngModel" type="text" name="middleName"/><br>
+
+
+    <label>last Name:</label><br>
+    <input ngModel #usernameRef="ngModel" type="text" name="lastName"/><br>
+
+    <label>phone Number:</label><br>
+    <input ngModel #usernameRef="ngModel" type="text" name="phoneNumber"/><br>
+    <br>
+
+    <input type="submit" />
+    <h3 *ngIf="userUpdated"> Contact Updated successfully</h3>
+  </form>
+  </div>
